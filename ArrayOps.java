@@ -30,7 +30,7 @@ public class ArrayOps {
                 secondMax = max;
                 max = array[i];
             }
-            if (array[i] < max && array[i] > secondMax){
+            if (array[i] < max && array[i] > secondMax) {
                 secondMax = array[i];
             }
         }
@@ -39,12 +39,12 @@ public class ArrayOps {
 
     public static boolean containsTheSameElements(int[] array1, int[] array2) {
         for (int i = 0; i < array1.length; i++) {
-            if (!contains(array1, array2[i])) {
+            if (!contains(array1[i], array2)) {
                 return false;
             }
         }
         for (int i = 0; i < array2.length; i++) {
-            if (!contains(array2, array1[i])) {
+            if (!contains(array2[i], array1)) {
                 return false;
             }
         }
@@ -54,23 +54,23 @@ public class ArrayOps {
     public static boolean isSorted(int[] array) {
         boolean increasingOrder = true;
         boolean decreasingOrder = true;
-        for (int i = 0; i < array.length - 1; i++){
-            if (array[i] < array[i+1]){
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] < array[i + 1]) {
                 increasingOrder = false;
             }
-            if (array[i] > array[i+1]){
+            if (array[i] > array[i + 1]) {
                 decreasingOrder = false;
             }
         }
-        if(increasingOrder || decreasingOrder){
+        if (increasingOrder || decreasingOrder) {
             return true;
         }
         return false;
     }
 
-    public static boolean contains(int[] array, int element) {
+    public static boolean contains(int element, int[] array) {
         for (int i = 0; i < array.length; i++) {
-            if (element == array[i]) {
+            if (array[i] == element) {
                 return true;
             }
         }
