@@ -30,8 +30,9 @@ public class ArrayOps {
                 secondMax = max;
                 max = array[i];
             }
-            if (array[i] < max && array[i] > secondMax) ;
-            secondMax = array[i];
+            if (array[i] < max && array[i] > secondMax){
+                secondMax = array[i];
+            }
         }
         return secondMax;
     }
