@@ -31,7 +31,7 @@ public class StringOps {
 
         for (int i = 0; i < string.length(); i++) {
             char character = string.charAt(i);
-            if (character >= 'A' && character >= 'Z') {
+            if (character >= 'A' && character <= 'Z') {
                 character += 32;
             }
             lowerCaseWord += character;
