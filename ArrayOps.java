@@ -39,12 +39,12 @@ public class ArrayOps {
 
     public static boolean containsTheSameElements(int[] array1, int[] array2) {
         for (int i = 0; i < array1.length; i++) {
-            if (!contains(array1, array1[i])) {
+            if (!contains(array1, array2[i])) {
                 return false;
             }
         }
         for (int i = 0; i < array2.length; i++) {
-            if (!contains(array2, array2[i])) {
+            if (!contains(array2, array1[i])) {
                 return false;
             }
         }
