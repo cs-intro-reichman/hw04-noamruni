@@ -26,12 +26,26 @@ public class StringOps {
     }
 
     public static String capVowelsLowRest (String string) {
-        // Write your code here:
-        return "";
+        String lowerCaseWord = "";
+        String newWord = "";
+        for (int i = 0; i < string.length(); i++){
+            char character = string.charAt(i);
+            if (character >= 'A' && character >= 'Z'){
+                character += 32;
+            }
+            lowerCaseWord += character;
+        }
+        for (int i = 0; i < lowerCaseWord.length(); i++){
+            char newCharacter = lowerCaseWord.charAt(i);
+            if (newCharacter == 'a' || newCharacter == 'e' || newCharacter == 'i' || newCharacter == 'o' || newCharacter == 'u'){
+                newCharacter -= 32;
+            }
+            newWord += newCharacter;
+        }
+        return newWord;
     }
 
     public static String camelCase (String string) {
-        // Write your code here:
         return "";
     }
 
