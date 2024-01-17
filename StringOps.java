@@ -92,7 +92,20 @@ public class StringOps {
     }
 
     public static int[] allIndexOf(String string, char chr) {
-        // Write your code here:
-        return new int[1];
+        int characterCount = 0;
+        for (int i = 0; i < string.length(); i++) {
+            if (chr == string.charAt(i)) {
+                characterCount++;
+            }
+        }
+        int[] indexesOfCharacter = new int[characterCount];
+        characterCount = 0;
+        for (int j = 0; j < string.length(); j++){
+            if (chr == string.charAt(j)){
+                indexesOfCharacter[characterCount] = j;
+                characterCount++;
+            }
+        }
+        return indexesOfCharacter;
     }
 }
