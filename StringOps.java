@@ -48,7 +48,47 @@ public class StringOps {
     }
 
     public static String camelCase(String string) {
-        return "";
+        String newWord = "";
+        int characterIndex = 0;
+        char currentCharacter;
+        boolean isNewWord = true;
+        boolean startNewWord = false;
+
+        for (int i = 0; i < string.length(); i++) {
+            characterIndex = (int) string.charAt(i);
+            if (string.charAt(i) != ' ') {
+                if (isNewWord) {
+                    if (characterIndex > 65 && characterIndex < 90) {
+                        characterIndex += 32;
+                    }
+                    currentCharacter = (char) characterIndex;
+                    newWord += currentCharacter;
+
+                    if ((i < (string.length() + 1)) && (string.charAt(i + 1) == ' ')) {
+                        isNewWord = false;
+                    }
+                } else {
+                    if (characterIndex > 65 && characterIndex < 90) {
+                        if (startNewWord) {
+                            startNewWord = false;
+                        } else {
+                            characterIndex += 32;
+                        }
+                    } else {
+                        if (startNewWord) {
+                            characterIndex -= 32;
+                            startNewWord = false;
+                        }
+                    }
+                    currentCharacter = (char) characterIndex;
+                    newWord += currentCharacter;
+                }
+            } else if (!isNewWord) {
+                startNewWord = true;
+            }
+        }
+
+        return newWord;
     }
 
     public static int[] allIndexOf(String string, char chr) {
